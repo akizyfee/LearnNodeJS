@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "cf3b10e3-500c-4550-9e66-50cb10593329",
+		"name": "express mataWall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19683275"
+	},
+	"item": [
+		{
+			"name": "express get貼文",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTU0MDk2NywiZXhwIjoxNjU4MTMyOTY3fQ.CA4R7DyTfI2g8LS5YGJwFlDbtPYETL3ggB9mL0Fh0uQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/post",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 發文",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTU0MDk2NywiZXhwIjoxNjU4MTMyOTY3fQ.CA4R7DyTfI2g8LS5YGJwFlDbtPYETL3ggB9mL0Fh0uQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"6277a6907b79d6126d575d6b\",\r\n    \"content\":\"不要上班2233\",\r\n    \"image\": \"https://stocksnap.io/photo/minimal-cactus-KSC88QWZBR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/create",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 編輯貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTU0MDk2NywiZXhwIjoxNjU4MTMyOTY3fQ.CA4R7DyTfI2g8LS5YGJwFlDbtPYETL3ggB9mL0Fh0uQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"下班耶耶\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/62ad95b0ba9826f1e0d755c0",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"62ad95b0ba9826f1e0d755c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 刪除全部貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTU0MDk2NywiZXhwIjoxNjU4MTMyOTY3fQ.CA4R7DyTfI2g8LS5YGJwFlDbtPYETL3ggB9mL0Fh0uQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts",
+					"host": [
+						"{{URL}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 刪除一筆貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTU0MDk2NywiZXhwIjoxNjU4MTMyOTY3fQ.CA4R7DyTfI2g8LS5YGJwFlDbtPYETL3ggB9mL0Fh0uQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/deletone/62ad95b0ba9826f1e0d755c0",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"deletone",
+						"62ad95b0ba9826f1e0d755c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"uuaa\",\r\n    \"email\":\"a5s5@gmail.com\",\r\n    \"password\":\"aa8888888\",\r\n    \"gender\":\"male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}users/sign_up",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"aa55@gmail.com\",\r\n    \"password\":\"aa8888883\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}users/sign_in",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 改密碼",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTU0MDk2NywiZXhwIjoxNjU4MTMyOTY3fQ.CA4R7DyTfI2g8LS5YGJwFlDbtPYETL3ggB9mL0Fh0uQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"password\":\"aa8888883\",\r\n        \"confirmPassword\":\"aa8888883\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/updatePassword",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"62862ec031d6d40cba12b87d",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 獲得個人資訊",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTU0MDk2NywiZXhwIjoxNjU4MTMyOTY3fQ.CA4R7DyTfI2g8LS5YGJwFlDbtPYETL3ggB9mL0Fh0uQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}users/user",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 修改個人資訊",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"bbbccc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/edit",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"62862ec031d6d40cba12b87d",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 上傳圖片",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1MzI2ODM1NCwiZXhwIjoxNjU1ODYwMzU0fQ.x4I_6C9w2wN2OfWvcAEi_rGazeLSIjjoiLqnNr_HXfQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "\n",
+							"type": "file",
+							"src": "/C:/Users/akidyfee/Desktop/123.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}upload",
+					"host": [
+						"{{URL}}upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 按讚",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/62ada5f62f30a4a7772d631a/like",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"62ada5f62f30a4a7772d631a",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 移除讚",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}posts/62ada5f62f30a4a7772d631a/unlike",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"62ada5f62f30a4a7772d631a",
+						"unlike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 新增留言",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\":\"天氣變好了\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/62a88ef6407c299793ddf595/comment",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"62a88ef6407c299793ddf595",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 追蹤",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/follow",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"62862ec031d6d40cba12b87d",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 取消追蹤",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/unfollow",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"62862ec031d6d40cba12b87d",
+						"unfollow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 取得追蹤列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}users/user/following",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"following"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

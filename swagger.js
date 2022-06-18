@@ -5,7 +5,7 @@ const doc = {
         title: 'Meta API',
         descripttion: '生成的範例文件'
     },
-    host: 'localhost:3000',
+    host: 'https://fathomless-ravine-88500.herokuapp.com/',
     schemas: ['http', 'https'],
     securityDefinitions: {
         apiKeyAuth: {
