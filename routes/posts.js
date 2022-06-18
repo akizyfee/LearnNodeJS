@@ -18,6 +18,16 @@ router.get('/post', isAuth, (req, res, next)=>{
         description: '取得所有貼文',
         schema: '',
     }
+    #swagger.parameters['q'] = {
+        in: 'query',
+        description: '關鍵字',
+        type: 'string',
+    }
+    #swagger.parameters['sort'] = {
+        in: 'query',
+        description: '排序方式，desc 為新至舊，asc 為舊至新',
+        type: 'string',
+    }
     */
     /**
     #swagger.responses[200] = {
