@@ -1,0 +1,1565 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Meta API",
+    "descripttion": "生成的範例文件"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "authorization",
+      "description": "需要加一上 JSON Web Token"
+    }
+  },
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/users/sign_up": {
+      "post": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "註冊一個帳號",
+        "description": "",
+        "parameters": [
+          {
+            "name": "註冊",
+            "in": "body",
+            "description": "輸入帳密暱稱註冊一個帳號",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "暱稱"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "test11@gmail.com"
+                    },
+                    "password": {
+                      "type": "string",
+                      "example": "1234567ab"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "email",
+                    "password"
+                  ]
+                }
+              }
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "註冊帳號成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "email重複",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "帳號已被註冊，請替換新的 Email！"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "暱稱至少2個字",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "暱稱至少 2 個字元以上"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/sign_in": {
+      "post": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "登入帳號",
+        "description": "",
+        "parameters": [
+          {
+            "name": "登入",
+            "in": "body",
+            "description": "輸入帳密登入你的帳號",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "aa55@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "aa8888883"
+                }
+              },
+              "required": [
+                "email",
+                "password"
+              ]
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "登入帳號成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "帳號或密碼錯誤",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "帳號或密碼錯誤，請重新輸入！"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/user": {
+      "get": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "取得使用者資料",
+        "description": "",
+        "parameters": [
+          {
+            "name": "使用者資料",
+            "in": "body",
+            "description": "取得使用者資料",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "取得使用者資料成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "取得使用者資料"
+                },
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "photo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "gender": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "followers": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "following": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "取得失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "尚未登入"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/users/user/{id}/edit": {
+      "patch": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "修改個人資訊",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "修改個人資料格式",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "aassbb"
+                },
+                "photo": {
+                  "type": "string",
+                  "example": ""
+                },
+                "gender": {
+                  "type": "string",
+                  "example": ""
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "修改使用者資訊成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "編輯使用者資料成功"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "photo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "gender": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "followers": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "following": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "編輯失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "編輯失敗"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "編輯失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "欄位資料填寫不全"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/users/user/{id}/updatePassword": {
+      "post": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "修改密碼",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "修改密碼",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "type": "string",
+                  "example": "aa8888883"
+                },
+                "confirmPassword": {
+                  "type": "string",
+                  "example": "aa8888883"
+                }
+              },
+              "required": [
+                "password",
+                "confirmPassword"
+              ]
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "修改密碼成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "修改密碼成功"
+                },
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "修改失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "密碼不一致！"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "修改失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "密碼需至少 8 碼以上"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/users/user/{id}/follow": {
+      "post": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "追蹤",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "追蹤",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "追蹤成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "成功追蹤"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "追蹤失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "不可以追蹤自己"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/users/user/{id}/unfollow": {
+      "delete": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "取消追蹤",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "取消追蹤",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "取消追蹤成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "成功取消追蹤"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "取消追蹤失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "沒有這個選項"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/users/user/following": {
+      "get": {
+        "tags": [
+          "Users - 使用者"
+        ],
+        "summary": "取得追蹤列表",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "取得追蹤列表",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "取得追蹤列表成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/post": {
+      "get": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "取得所有貼文",
+        "description": "",
+        "parameters": [
+          {
+            "name": "取得貼文",
+            "in": "body",
+            "description": "取得所有貼文",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "取得所有貼文成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "資料讀取成功"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "content": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "user": {
+                      "type": "object",
+                      "properties": {
+                        "_id": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "photo": {
+                          "type": "string",
+                          "example": "string"
+                        }
+                      }
+                    },
+                    "likes": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "time"
+                    },
+                    "comments": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/create": {
+      "post": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "發文",
+        "description": "",
+        "parameters": [
+          {
+            "name": "發文",
+            "in": "body",
+            "description": "發文",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "string",
+                  "example": "6277a6907b79d6126d575d6b"
+                },
+                "content": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "image": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "required": [
+                "user",
+                "content"
+              ]
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "發文成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "200"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "user": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "likes": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "time"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "發文失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "內文不能空白"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/{id}": {
+      "patch": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "編輯貼文",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "編輯貼文",
+            "in": "body",
+            "description": "編輯貼文",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "content": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "required": [
+                "content"
+              ]
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "編輯貼文成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "200"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "content": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "user": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "likes": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "time"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "編輯貼文失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "內文不能空白"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "編輯貼文失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "無此貼文ID"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/{id}/comment": {
+      "post": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "新增留言",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "新增留言",
+            "in": "body",
+            "description": "新增留言",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "content": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "required": [
+                "content"
+              ]
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "新增留言成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "新增留言成功"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "comment": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "user": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "post": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "time"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "新增留言失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "內文不能空白"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/": {
+      "delete": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "刪除所有貼文",
+        "description": "",
+        "parameters": [
+          {
+            "name": "刪除貼文",
+            "in": "body",
+            "description": "刪除所有貼文",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "刪除所有貼文成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "刪除成功"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "acknowledged": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "deletedCount": {
+                      "type": "string",
+                      "example": "number"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "刪除失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "無此路由"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/deletone/{id}": {
+      "delete": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "刪除單筆貼文",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "刪除單筆貼文",
+            "in": "body",
+            "description": "刪除單筆貼文",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "刪除單筆貼文成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "刪除成功"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "content": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "user": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "likes": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "time"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "刪除失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "無此ID"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/{id}/like": {
+      "post": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "對貼文按讚",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "對貼文按讚",
+            "in": "body",
+            "description": "對貼文按讚",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "對貼文按讚成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "按讚成功"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "content": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "user": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "likes": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "time"
+                    },
+                    "comments": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "按讚失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "無此ID"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/posts/{id}/unlike": {
+      "delete": {
+        "tags": [
+          "Posts - 貼文"
+        ],
+        "summary": "移除按過的讚",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "移除按過的讚",
+            "in": "body",
+            "description": "移除按過的讚",
+            "schema": "",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "移除按過的讚成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "移除按讚成功"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "content": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "user": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "likes": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "time"
+                    },
+                    "comments": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "按讚失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "無此ID"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/upload/": {
+      "post": {
+        "tags": [
+          "Upload - 上傳圖片"
+        ],
+        "summary": "上傳貼文圖片OR使用者頭像",
+        "description": "",
+        "parameters": [
+          {
+            "name": "上傳圖片",
+            "type": "file",
+            "in": "formData",
+            "description": "上傳貼文圖片OR使用者頭像",
+            "schema": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "資料讀取成功",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "example": "string"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "上傳失敗",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "尚未上傳檔案"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "schemas": [
+    "http",
+    "https"
+  ]
+}
