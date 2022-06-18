@@ -20,7 +20,10 @@ const userRouter = require('./routes/users');
 const uploadRouter = require('./routes/upload');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  allowedHeaders:
+  'Content-Type,Authorization,Content-Length,X-Requested-With',
+}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
