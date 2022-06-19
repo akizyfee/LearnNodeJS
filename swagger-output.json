@@ -16,7 +16,7 @@
       "type": "apiKey",
       "in": "header",
       "name": "authorization",
-      "description": "需要加一上 JSON Web Token"
+      "description": "需要加一上 JSON Web Token，註冊和登入得到的 Token 輸入進來的時候前面要加 Bearer 和一個空白再複製得到的 Token 哦!!!"
     }
   },
   "consumes": [],
