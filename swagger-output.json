@@ -4,11 +4,12 @@
     "title": "Meta API",
     "descripttion": "生成的範例文件"
   },
-  "host": "localhost:3000",
+  "host": "https://fathomless-ravine-88500.herokuapp.com/api-doc",
   "basePath": "/",
   "tags": [],
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "securityDefinitions": {
     "apiKeyAuth": {
@@ -704,6 +705,18 @@
             "in": "body",
             "description": "取得所有貼文",
             "schema": "",
+            "type": "string"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "關鍵字",
+            "type": "string"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "排序方式，desc 為新至舊，asc 為舊至新",
             "type": "string"
           }
         ],
@@ -1557,9 +1570,5 @@
       }
     }
   },
-  "definitions": {},
-  "schemas": [
-    "http",
-    "https"
-  ]
+  "definitions": {}
 }
