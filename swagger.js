@@ -6,7 +6,7 @@ const doc = {
         descripttion: '生成的範例文件'
     },
     host: 'fathomless-ravine-88500.herokuapp.com',
-    schemes: ['http', 'https'],
+    schemes: ['https', 'http'],
     securityDefinitions: {
         apiKeyAuth: {
             type: 'apiKey',
