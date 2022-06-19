@@ -37,29 +37,24 @@
             "schema": {
               "type": "object",
               "properties": {
-                "user": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string",
-                      "example": "暱稱"
-                    },
-                    "email": {
-                      "type": "string",
-                      "example": "test11@gmail.com"
-                    },
-                    "password": {
-                      "type": "string",
-                      "example": "1234567ab"
-                    }
-                  },
-                  "required": [
-                    "name",
-                    "email",
-                    "password"
-                  ]
+                "name": {
+                  "type": "string",
+                  "example": "暱稱"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test11@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234567ab"
                 }
-              }
+              },
+              "required": [
+                "name",
+                "email",
+                "password"
+              ]
             },
             "type": "string"
           }
