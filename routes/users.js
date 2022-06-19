@@ -13,11 +13,9 @@ router.post('/sign_up', (req, res, next)=>{
         in: 'body',
         description: '輸入帳密暱稱註冊一個帳號',
         schema: {
-            user: {
             $name: '暱稱',
             $email: 'test11@gmail.com',
             $password: '1234567ab',
-            }
         }
     }
     */
