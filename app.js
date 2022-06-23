@@ -36,6 +36,13 @@ app.use('/posts', postRouter);
 app.use('/upload', uploadRouter);
 app.use('/api-doc',swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
+app.use(function (req, res, next) {
+  res.status(404).json({
+    status: 'error',
+    message: '無此路由資訊',
+  });
+});
+
 app.use(function (err, req, res, next) {
   // dev
   err.statusCode = err.statusCode || 500;
