@@ -51,14 +51,12 @@ app.use(function (err, req, res, next) {
   resError.resErrorProd(err, res);
 });
 
-// 未捕捉到的 catch   雖然都包在errorHandle，但如果在沒包到的地方獨立定義了錯誤的東西之類的就需要靠這段捕捉
 process.on('unhandledRejection', (reason, promise) => {
   console.error('未捕捉到的 rejection：', promise, '原因：', reason);
-  // 記錄於 log 上
+
 });
 
 process.on('uncaughtException', err => {
-  // 記錄錯誤下來，等到服務都處理完後，停掉該 process
 	console.error('Uncaughted Exception！')
 	console.error(err);
 	process.exit(1);
