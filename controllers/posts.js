@@ -65,7 +65,7 @@ const posts = {
     }),
     deletePosts: handleErrorAsync(async (req, res, next) => {
         if (req.originalUrl === '/posts/') {
-            return appError(400, '無此路由', next)
+            return appError(400, '無此路由', next);
         } else {
             const DeleteAll = await Post.deleteMany({})
             handleSuccess(res, '刪除成功', DeleteAll, 200);
