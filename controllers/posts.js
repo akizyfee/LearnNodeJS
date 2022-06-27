@@ -24,7 +24,7 @@ const posts = {
             const newPost = await Post.create(data)
             handleSuccess(res, 200, newPost);
         } else {
-            appError(400, '內文不能空白', next)
+            return appError(400, '內文不能空白', next)
         }
     }),
     editPost: handleErrorAsync(async (req, res, next) => {
@@ -33,9 +33,9 @@ const posts = {
         const content = req.body.content
         const newPost = await Post.findById(id).exec();
         if (newPost == null) {
-            appError(401, '無此貼文ID', next);
+            return appError(401, '無此貼文ID', next);
         } else if (!content) {
-            appError(400, '內文不得為空白', next);
+            return appError(400, '內文不得為空白', next);
         } else {
             const newPost = await Post.findByIdAndUpdate(
                 id,
@@ -57,7 +57,7 @@ const posts = {
         data.post = req.params.id;
         const { comment } = req.body;
         if(!comment){
-            appError(400, '內容不可以空白', next);
+            return appError(400, '內容不可以空白', next);
         }else{
             const newComment = await Comment.create(data);
             handleSuccess(res, '新增留言成功', newComment, 200);
@@ -65,7 +65,7 @@ const posts = {
     }),
     deletePosts: handleErrorAsync(async (req, res, next) => {
         if (req.originalUrl === '/posts/') {
-            appError(400, '無此路由', next)
+            return appError(400, '無此路由', next)
         } else {
             const DeleteAll = await Post.deleteMany({})
             handleSuccess(res, '刪除成功', DeleteAll, 200);
@@ -75,7 +75,7 @@ const posts = {
         const id = req.params.id;
         const deleteOne = await Post.findById(id).exec();
         if (deleteOne == null) {
-            appError(400, '無此ID', next);
+            return appError(400, '無此ID', next);
         } else {
             const deleteOne = await Post.findByIdAndDelete(id);
             handleSuccess(res, '刪除成功', deleteOne, 200);
@@ -85,7 +85,7 @@ const posts = {
         const _id = req.params.id;
         const searchLike = await Post.findById(_id).exec();
         if (searchLike == null) {
-            appError(400, '無此ID', next);
+            return appError(400, '無此ID', next);
         } else {
             const addLike = await Post.findByIdAndUpdate(
                 { _id },
@@ -98,7 +98,7 @@ const posts = {
         const _id = req.params.id;
         const searchLike = await Post.findById(_id).exec();
         if (searchLike == null) {
-            appError(400, '無此ID', next);
+            return appError(400, '無此ID', next);
         } else {
             const deleteLike = await Post.findByIdAndUpdate(
                 { _id },

@@ -11,19 +11,19 @@ const users = {
         let { email, password, name } = req.body;
         const user = await User.findOne({ email });
         if (user) {
-            appError('400', '帳號已被註冊，請替換新的 Email！', next);
+            return appError('400', '帳號已被註冊，請替換新的 Email！', next);
         }
         if (!email || !password || !name) {
-            appError('400', '欄位未填寫正確！', next);
+            return appError('400', '欄位未填寫正確！', next);
         }
         if (!validator.isLength(name, { min: 2 })) {
-            appError('400', '暱稱至少 2 個字元以上', next);
+            return appError('400', '暱稱至少 2 個字元以上', next);
         }
         if (!validator.isLength(password, { min: 8 })) {
-            appError('400', '密碼需至少 8 碼以上，並中英混合', next);
+            return appError('400', '密碼需至少 8 碼以上，並中英混合', next);
         }
         if (!validator.isEmail(email)) {
-            appError('400', 'Email 格式不正確', next);
+            return appError('400', 'Email 格式不正確', next);
         }
         password = await bcrypt.hash(req.body.password, 12);
         const newUser = await User.create({
