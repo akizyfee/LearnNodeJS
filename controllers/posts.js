@@ -24,7 +24,7 @@ const posts = {
             const newPost = await Post.create(data)
             handleSuccess(res, 200, newPost);
         } else {
-            return appError(400, '內文不能空白', next)
+            return appError(400, '內文不能空白', next);
         }
     }),
     editPost: handleErrorAsync(async (req, res, next) => {
