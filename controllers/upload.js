@@ -8,7 +8,7 @@ const { ImgurClient } = require('imgur');
 const uploadFiles = {
     uploadFile: handleErrorAsync(async (req, res, next) => {
         if (!req.files.length) {
-            return (appError(400, '尚未上傳檔案', next));
+            return appError(400, '尚未上傳檔案', next);
         }
         //我想上傳不是1:1的貓咪圖所以先註解掉這裡
         // const dimensions = sizeOf(req.files[0].buffer);
