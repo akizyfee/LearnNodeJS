@@ -45,10 +45,6 @@ const users = {
         }
         generateSendJWT(user, 200, res);
     }),
-    getUsers: handleErrorAsync(async (req, res) => {
-        const users = await User.find();
-        handleSuccess(res, '取得使用者資料', users);
-    }),
     getUser: handleErrorAsync(async (req, res) => {
         const currentUserId = req.user.id;
         const users = await User.findById(currentUserId);
