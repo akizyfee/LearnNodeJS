@@ -1,10 +1,3 @@
-NodeJs_backend
-
-MetaWall  
-
-API 文件 Demo  
-https://fathomless-ravine-88500.herokuapp.com/api-doc  
-
 Postman API 匯入檔案  
 express mataWall.postman_collection.json  
 
