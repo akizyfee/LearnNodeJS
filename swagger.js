@@ -6,7 +6,7 @@ const doc = {
         descripttion: '生成的範例文件'
     },
     host: 'learnnodejs.onrender.com',
-    schemes: ['https', 'http'],
+    // schemes: ['https', 'http'],
     securityDefinitions: {
         apiKeyAuth: {
             type: 'apiKey',
