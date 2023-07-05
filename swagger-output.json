@@ -4,7 +4,7 @@
     "title": "Meta API",
     "descripttion": "生成的範例文件"
   },
-  "host": "https://learnnodejs.onrender.com",
+  "host": "learnnodejs.onrender.com",
   "basePath": "/",
   "tags": [],
   "schemes": [
