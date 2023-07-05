@@ -5,7 +5,7 @@ const doc = {
         title: 'Meta API',
         descripttion: '生成的範例文件'
     },
-    host: 'fathomless-ravine-88500.herokuapp.com',
+    host: 'https://learnnodejs.onrender.com/',
     schemes: ['https', 'http'],
     securityDefinitions: {
         apiKeyAuth: {

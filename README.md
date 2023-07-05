@@ -1,5 +1,5 @@
 Postman API 匯入檔案  
-express mataWall.postman_collection.json  
+express mataWall.postman_collection.json
 
 Postman API 匯入環境變數檔案  
 metaWall-sideProject-heroku.postman_environment.json  
@@ -11,10 +11,10 @@ swagger API 文件
 
 專案設定  
 安裝 modules  
-npm install  
+npm ci  
 
 啟動 server  
 npm start:dev  
 
 產生新的 swagger-output.json  
-npm swagger  
+npm run swagger  
